@@ -12,8 +12,8 @@
    `cd rails-docker`
 3. コンテナをビルド＆起動
    `docker compose up -d --build`
-4. 初回のみマイグレーションを実行
-   `docker compose exec web bin/rails db:migrate`
+4. 初回のみ DB 準備を実行
+   `docker compose exec web bin/rails db:prepare`
 5. 以下 URL にブラウザでアクセスし動作確認
    `http://localhost:3000`
    "Tasks New task" と表示されれば OK
