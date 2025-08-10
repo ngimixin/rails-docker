@@ -1,24 +1,19 @@
-# README
+# Rails + PostgreSQL Docker 環境構築手順
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 前提条件
 
-Things you may want to cover:
+- Docker / Docker Compose がインストールされていること
 
-* Ruby version
+## 手順
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. リポジトリをクローン
+   `git clone https://github.com/あなたのユーザー名/rails-docker.git`
+2. クローンしたディレクトリへ移動
+   `cd rails-docker`
+3. コンテナをビルド＆起動
+   `docker compose up -d --build`
+4. 初回のみ DB 準備を実行
+   `docker compose exec web bin/rails db:prepare`
+5. 以下 URL にブラウザでアクセスし動作確認
+   `http://localhost:3000`
+   "Tasks New task" と表示されれば OK
